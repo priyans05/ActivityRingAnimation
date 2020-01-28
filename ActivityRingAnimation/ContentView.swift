@@ -10,9 +10,9 @@ import SwiftUI
 
 
 struct ContentView: View {
-    let exerciseActivity = Activity(activityName: "Excercise", activityUnit: 20.0)
-    let caloriesBurned = Activity(activityName: "Calories Burned", activityUnit: 430.0)
-    let standingHours = Activity(activityName: "Standing Hours", activityUnit: 4.0)
+    let exerciseActivity = Activity(activityName: "Excercise", activityUnit: 10.0)
+    let caloriesBurned = Activity(activityName: "Calories Burned", activityUnit: 410.0)
+    let standingHours = Activity(activityName: "Standing Hours", activityUnit: 8.0)
     
     init() {
         UITableView.appearance().separatorColor = .clear
