@@ -33,6 +33,8 @@ struct ActivityRingView: View {
     var ringLineWidth: CGFloat = 30
     var animationDuration: Double = 1.0
     
+    var showNumbers = true
+    
     @State private var animateRing: Bool = false
     @State private var isOverlapping: Bool = false
     
@@ -72,7 +74,7 @@ struct ActivityRingView: View {
                 .animation(Animation.linear(duration: animationDuration).delay(delayDuration))
                 .onAppear() {
                     self.animateRing.toggle()
-                }
+            }
             
             
             
@@ -104,11 +106,9 @@ struct ActivityRingView: View {
                         self.isOverlapping.toggle()
                 }
             }
+        }.onTapGesture {
+            self.animateRing.toggle()
         }
-        .onTapGesture {
-                       self.animateRing.toggle()
-            
-                   }
     }
     
 }

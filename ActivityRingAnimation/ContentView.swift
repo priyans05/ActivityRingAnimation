@@ -14,16 +14,22 @@ struct ContentView: View {
     let caloriesBurned = Activity(activityName: "Calories Burned", activityUnit: 430.0)
     let standingHours = Activity(activityName: "Standing Hours", activityUnit: 4.0)
     
-    
+    init() {
+        UITableView.appearance().separatorColor = .clear
+    }
     var body: some View {
         let activities: [Activity] = [exerciseActivity, caloriesBurned, standingHours]
         
         return VStack {
-            ZStack {
-                ActivityRingView(areaRadiusForTheRing: 60, percentageOfActivityFinished: standingHours.percentage, ringColor: standingHours.ringColor)
-                ActivityRingView(areaRadiusForTheRing: 130, percentageOfActivityFinished: caloriesBurned.percentage, ringColor: caloriesBurned.ringColor)
-                ActivityRingView(areaRadiusForTheRing: 200, percentageOfActivityFinished: exerciseActivity.percentage, ringColor: exerciseActivity.ringColor)
-            }.padding()
+ 
+                ZStack {
+                    ActivityRingView(areaRadiusForTheRing: 60, percentageOfActivityFinished: standingHours.percentage, ringColor: standingHours.ringColor)
+                    ActivityRingView(areaRadiusForTheRing: 130, percentageOfActivityFinished: caloriesBurned.percentage, ringColor: caloriesBurned.ringColor)
+                    ActivityRingView(areaRadiusForTheRing: 200, percentageOfActivityFinished: exerciseActivity.percentage, ringColor: exerciseActivity.ringColor)
+                }.padding()
+                
+                
+            
             
             Text("Activity")
                 .font(.largeTitle)

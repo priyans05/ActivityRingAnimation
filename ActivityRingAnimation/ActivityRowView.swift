@@ -15,27 +15,29 @@ struct ActivityRowView: View {
         ZStack {
             Rectangle()
                 .frame(width: UIScreen.main.bounds.width - 10, height: 90)
-                .foregroundColor(activity.ringColor.opacity(0.3))
+                .foregroundColor(activity.ringColor.opacity(0.2))
                 .cornerRadius(10)
+                .shadow(color: activity.ringColor.opacity(0.6), radius: 20, x: 0, y: 20)
             HStack {
                 
                 VStack(alignment: .leading) {
                     Text("\(activity.activityName)")
                         .font(.headline)
                         .bold()
-                    .underline()
+                        .underline()
+                        .foregroundColor(activity.ringColor)
                         .padding(.bottom, 10)
-                        
+                    
                     
                     Text("\(Int(activity.activityUnit)) / \(activity.thrashHold) - \(activity.activityUnitDescription)")
                         .font(.callout)
-                        
+                    
                     
                 }.padding()
                 Spacer()
                 ActivityRingView(areaRadiusForTheRing: 50, percentageOfActivityFinished: activity.percentage, ringColor: activity.ringColor, ringLineWidth: 12)
-                .padding()
-                    
+                    .padding()
+                
             }.padding()
         }
     }
